@@ -5,7 +5,7 @@ from flask_jwt_extended import JWTManager
 
 from security import authenticate, identity
 from resources.item import Item, ItemList
-from resources.user import UserRegister, UserLogin, TokenRefresh
+from resources.user import UserRegister, UserLogin, TokenRefresh, UserLogout
 from resources.store import Store, StoreList
 
 app = Flask(__name__)
@@ -25,6 +25,7 @@ api.add_resource(StoreList, '/stores')
 api.add_resource(UserRegister, '/register')
 api.add_resource(UserLogin, '/login')
 api.add_resource(TokenRefresh, '/token-refresh')
+api.add_resource(UserLogout, '/logout')
 
 if __name__ == '__main__':
     from db import db
